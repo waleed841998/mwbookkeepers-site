@@ -1,3 +1,20 @@
+/* HEADER / HERO SECTION */
+header {
+  background-color: #0074cc;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header img {
+  height: 90px; /* Bigger Logo */
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
 /* GENERAL RESET */
 * {
   margin: 0;
