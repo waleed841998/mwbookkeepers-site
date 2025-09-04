@@ -5,28 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MW Bookkeepers</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Simple styles for service menu */
+    nav {
+      background-color: #003366; /* your blue */
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    nav a {
+      color: #FFD700; /* golden */
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background-color: #FFD700;
+      color: #003366;
+    }
+    section {
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <img src="mwlogo.png.png" alt="MW Bookkeepers" style="height: 180px;">
     <h1>Welcome to MW Bookkeepers</h1>
-    <p>Remote bookkeeping services for all kind of businesses including Property Management, Ecommerce & Small Businesses.</p>
+    <p>Remote bookkeeping services for all kinds of businesses including Property Management, Ecommerce & Small Businesses.</p>
   </header>
-  <section>
-    <h2>Our Services</h2>
-    <ul>
-      <li>Book Cleanup & Catch-Up</li>
-      <li>Monthly Bookkeeping (Global Clients Supported)</li>
-      <li>Payroll Processing</li>
-      <li>Bank Reconciliations & Financial Reporting</li>
-      <li>Accounts Receivable & Payable</li>   
-      <li>Budgeting & Forecasting</li>
-      <li>U.S. Tax Preparation (Proconnect, Drake, TurboTax)</li>
-      <li>Ad-Hoc Accounting & Financial Tasks (as per your business needs)</li>  
-    </ul>
+
+  <!-- Services Navigation Menu -->
+  <nav>
+    <a href="#bookkeeping">Monthly Bookkeeping</a>
+    <a href="#cleanup">Book Cleanup & Catch-Up</a>
+    <a href="#payroll">Payroll Processing</a>
+    <a href="#reconciliation">Bank Reconciliations & Financial Reporting</a>
+    <a href="#arap">Accounts Receivable & Payable</a>
+    <a href="#budgeting">Budgeting & Forecasting</a>
+    <a href="#tax">U.S. Tax Preparation</a>
+    <a href="#adhoc">Ad-Hoc Accounting Tasks</a>
+  </nav>
+
+  <!-- Services Sections -->
+  <section id="bookkeeping">
+    <h2>Monthly Bookkeeping</h2>
+    <p>We provide full monthly bookkeeping services for all global clients including property management, ecommerce, and small businesses.</p>
   </section>
+
+  <section id="cleanup">
+    <h2>Book Cleanup & Catch-Up</h2>
+    <p>We bring your books up to date, correct errors, and organize records for accurate reporting.</p>
+  </section>
+
+  <section id="payroll">
+    <h2>Payroll Processing</h2>
+    <p>Accurate and timely payroll for your employees, including taxes and compliance management.</p>
+  </section>
+
+  <section id="reconciliation">
+    <h2>Bank Reconciliations & Financial Reporting</h2>
+    <p>Reconcile your accounts and generate detailed financial reports to make informed business decisions.</p>
+  </section>
+
+  <section id="arap">
+    <h2>Accounts Receivable & Payable</h2>
+    <p>Manage incoming and outgoing payments efficiently to maintain cash flow and business health.</p>
+  </section>
+
+  <section id="budgeting">
+    <h2>Budgeting & Forecasting</h2>
+    <p>We help you plan budgets and forecast financial outcomes to grow your business sustainably.</p>
+  </section>
+
+  <section id="tax">
+    <h2>U.S. Tax Preparation</h2>
+    <p>Prepare and file U.S. taxes using Proconnect, Drake, or TurboTax with full accuracy and compliance.</p>
+  </section>
+
+  <section id="adhoc">
+    <h2>Ad-Hoc Accounting & Financial Tasks</h2>
+    <p>Flexible accounting and financial services tailored to your unique business needs.</p>
+  </section>
+
   <footer>
     <p>Contact: <a href="mailto:info@mwbookkeepers.com">info@mwbookkeepers.com</a></p>
   </footer>
 </body>
 </html>
+
