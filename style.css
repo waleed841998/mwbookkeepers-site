@@ -22,29 +22,29 @@ header {
   background-color: #87CEEB; /* sky blue */
   color: #003366; /* dark blue text for contrast */
   text-align: center;
-  padding: 40px 20px; /* reduced padding for smaller header */
+  padding: 25px 20px; /* smaller padding for desktop */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 header img {
-  height: 180px; /* bigger logo */
-  max-width: 250px;
+  height: 140px; /* smaller logo for desktop */
+  max-width: 220px;
   object-fit: contain;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 header h1 {
-  font-size: 32px; /* slightly smaller for better fit */
-  margin: 10px 0;
-  color: #003366; /* dark blue for readability */
+  font-size: 26px; /* smaller heading */
+  margin: 8px 0;
+  color: #003366;
 }
 
 header p {
-  font-size: 16px; /* slightly smaller text */
-  max-width: 800px;
-  color: #003366; /* dark blue for contrast */
+  font-size: 15px; /* smaller paragraph */
+  max-width: 700px;
+  color: #003366;
 }
 
 /* SERVICES SECTION */
@@ -129,18 +129,19 @@ form button:hover {
 /* RESPONSIVE HEADER FOR MOBILE */
 @media (max-width: 768px) {
   header {
-    padding: 25px 15px; /* smaller padding for mobile */
+    padding: 20px 15px; /* even smaller for mobile */
   }
 
   header img {
-    height: 120px; /* smaller logo on mobile */
+    height: 100px; /* smaller logo on mobile */
   }
 
   header h1 {
-    font-size: 24px; /* smaller heading for mobile */
+    font-size: 20px; /* smaller heading for mobile */
   }
 
   header p {
     font-size: 14px; /* smaller paragraph text for mobile */
   }
 }
+
