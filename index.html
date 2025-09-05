@@ -38,6 +38,93 @@
   <p style="color: #003366; max-width: 700px; margin: 0 auto 30px;">
     We provide Remote Bookkeeping services for individuals and all kind of businesses including Property Management, Ecommerce, Retail & other Small Businesses.
   </p>
+<!-- ====== Flyer Pop-Up Modal ====== -->
+
+<div id="flyerModal" class="modal">
+  <div class="modal-content">
+    <!-- Close button -->
+    <span class="close">&times;</span>
+
+    <!-- Logo -->
+    <div style="text-align:center; margin-bottom:15px;">
+      <img src="/mwlogo.png.png" 
+           alt="MW Bookkeepers Logo" 
+           style="max-width:150px;">
+    </div>
+
+    <!-- PDF embedded with no toolbar -->
+    <iframe src="/MW-Bookkeeper-Flyer.pdf#toolbar=0&navpanes=0&scrollbar=0" 
+            width="100%" 
+            height="500px" 
+            style="border:none;">
+    </iframe>
+
+    <!-- Custom Download button -->
+    <div style="text-align:center; margin-top:15px;">
+      <a href="/MW-Bookkeeper-Flyer.pdf" 
+         download="MW-Bookkeeper-Flyer.pdf"
+         style="background-color:#0f1a47; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold;">
+         Download Flyer
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ====== Styles ====== -->
+<style>
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+.close:hover {
+  color: #000;
+}
+</style>
+
+<!-- ====== Script ====== -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var modal = document.getElementById("flyerModal");
+  var span = document.getElementsByClassName("close")[0];
+
+  // Auto-open modal after 3 seconds
+  setTimeout(function(){ 
+    modal.style.display = "block"; 
+  }, 3000);
+
+  // Close modal
+  span.onclick = function(){ 
+    modal.style.display = "none"; 
+  }
+  window.onclick = function(e){ 
+    if (e.target == modal){ 
+      modal.style.display = "none"; 
+    }
+  }
+});
+</script>
 
   <!-- Optional: Feature Icons -->
   <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
