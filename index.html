@@ -151,6 +151,12 @@
             modal.style.display = "none"; 
           }
         }
+    // Close flyer modal when "Get a Free Quote" is clicked
+document.getElementById("quoteBtn").addEventListener("click", function() {
+  var modal = document.getElementById("flyerModal");
+  modal.style.display = "none"; 
+});
+
       });
     </script>
 
@@ -178,9 +184,11 @@
     </div>
 
     <!-- Call-to-Action Button -->
-    <a href="#contact" style="background-color: #FFD700; color: #003366; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: transform 0.3s;">
-      Get a Free Quote
-    </a>
+    <a href="#contact" id="quoteBtn" 
+   style="background-color: #FFD700; color: #003366; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: transform 0.3s;">
+   Get a Free Quote
+</a>
+
   </header>
 
   <!-- Services Sections -->
