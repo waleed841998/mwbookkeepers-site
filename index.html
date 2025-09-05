@@ -1,70 +1,215 @@
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MW Bookkeepers</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #1a1a2e;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
     nav {
-      margin-top: 10px;
+      background-color: #003366;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
     }
     nav a {
       color: #FFD700;
-      margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
     nav a:hover {
-      text-decoration: underline;
+      background-color: #FFD700;
+      color: #003366;
     }
-    main {
-      padding: 40px;
-      text-align: center;
+    section {
+      padding: 20px;
     }
-    footer {
-      background: #1a1a2e;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+    .modal-content {
+      background: #fff;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 700px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .close {
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+    .close:hover {
+      color: #000;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Welcome to MW Bookkeepers</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="1-Introduction-to-Bookkeeping.html">Bookkeeping</a>
-    </nav>
+  <!-- ✅ Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="1-Introduction-to-Bookkeeping.html">Bookkeeping</a>
+  </nav>
+
+  <header style="position: relative; text-align: center; padding: 60px 20px; background: linear-gradient(to bottom, #87CEFA, #B0E0E6);">
+    <img src="mwlogo.png.png" alt="MW Bookkeepers" style="height: 250px; margin-bottom: 20px;">
+    <h1 style="font-family: 'Roboto', sans-serif; font-weight: 700; color: #003366; margin-bottom: 15px;">Welcome to MW Bookkeepers</h1>
+    <p style="color: #003366; max-width: 700px; margin: 0 auto 30px;">
+      We provide Remote Bookkeeping services for individuals and all kind of businesses including Property Management, Ecommerce, Retail & other Small Businesses.
+    </p>
+
+    <!-- ====== Flyer Pop-Up Modal ====== -->
+    <div id="flyerModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="text-align:center; margin-bottom:15px;">
+          <img src="/mwlogo.png.png" alt="MW Bookkeepers Logo" style="max-width:150px;">
+        </div>
+        <!-- Embedded Flyer -->
+        <iframe src="/MW-Bookkeeper-Flyer.pdf#toolbar=0&navpanes=0&scrollbar=0"
+          width="100%" height="70vh" style="border:none;"></iframe>
+        <!-- Download button -->
+        <div style="text-align:center; margin-top:15px;">
+          <a href="/MW-Bookkeeper-Flyer.pdf" 
+             download="MW-Bookkeeper-Flyer.pdf"
+             style="background-color:#0f1a47; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold;">
+             Download Flyer
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var modal = document.getElementById("flyerModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Auto-open modal after 3 seconds
+        setTimeout(function(){ 
+          modal.style.display = "block"; 
+        }, 3000);
+
+        // Close modal
+        span.onclick = function(){ 
+          modal.style.display = "none"; 
+        }
+        window.onclick = function(e){ 
+          if (e.target == modal){ 
+            modal.style.display = "none"; 
+          }
+        }
+      });
+    </script>
+
+    <!-- Feature Icons -->
+    <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 8px; color: #003366;">
+        📊 <span>Bookkeeping</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; color: #003366;">
+        🔄 <span>Reconciliation</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; color: #003366;">
+        🧾 <span>Tax Support</span>
+      </div>
+    </div>
+
+    <!-- Pricing -->
+    <div style="margin: 30px 0; text-align: center; font-family: 'Roboto', sans-serif;">
+      <p style="color: #003366; font-size: 18px; margin-bottom: 10px;">
+        Affordable Bookkeeping Services
+      </p>
+      <p style="color: #003366; font-size: 24px; font-weight: bold;">
+        Starting at <span style="color: #2E8B57;">$600/month</span>
+      </p>
+    </div>
+
+    <!-- Call-to-Action Button -->
+    <a href="#contact" style="background-color: #FFD700; color: #003366; padding: 12px 25px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: transform 0.3s;">
+      Get a Free Quote
+    </a>
   </header>
 
-  <main>
-    <h2>Your Trusted Partner in Bookkeeping</h2>
-    <p>
-      We provide professional bookkeeping services that keep your business finances 
-      organized and stress-free. Explore our bookkeeping insights and tips in the 
-      <strong>Bookkeeping</strong> section.
-    </p>
-  </main>
+  <!-- Services -->
+  <section id="bookkeeping">
+    <h2>📊 Monthly Bookkeeping Services</h2>
+    <p>Our monthly bookkeeping services ensure your financial records remain accurate, up to date, and fully compliant with accounting standards...</p>
+  </section>
 
+  <section id="cleanup">
+    <h2>🧹 Book Cleanup & Catch-Up Accounting</h2>
+    <p>If your books are behind or disorganized, our cleanup and catch-up services provide the accuracy your business needs...</p>
+  </section>
+
+  <section id="reconciliation">
+    <h2>🔄 Bank Reconciliation & Financial Reporting</h2>
+    <p>We reconcile your bank and credit card accounts to maintain consistency between your statements and accounting records...</p>
+  </section>
+
+  <section id="arap">
+    <h2>💰 Accounts Receivable & Accounts Payable Management</h2>
+    <p>Managing cash flow effectively is essential for business success...</p>
+  </section>
+
+  <section id="budgeting">
+    <h2>📈 Budgeting & Financial Forecasting</h2>
+    <p>We assist in building realistic budgets and forward-looking financial forecasts...</p>
+  </section>
+
+  <section id="tax">
+    <h2>🧾 U.S. Tax Preparation Support</h2>
+    <p>We provide expert support for both individuals and businesses...</p>
+  </section>
+  
+  <section id="adhoc">
+    <h2>⚙️ Custom Accounting Services</h2>
+    <p>Every business has unique financial needs, which is why we offer flexible, ad-hoc accounting support...</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Have Questions? Get in Touch</h2>
+    <p>We’d love to hear from you. Please fill out the form below and we’ll respond within 24 hours.</p>
+    <form action="https://formspree.io/f/xblapzvd" method="POST">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="_replyto" required>
+      <label for="message">Your Query:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 MW Bookkeepers. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@mwbookkeepers.com">info@mwbookkeepers.com</a></p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/19G3fLFqjf/" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/mwbookkeepers?igsh=MWxyNTlzYmJiMnRoaQ==" target="_blank">Instagram</a>
+    </div>
   </footer>
-
 </body>
 </html>
