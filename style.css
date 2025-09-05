@@ -19,8 +19,8 @@ a:hover {
 
 /* HEADER SECTION */
 header {
-  background-color: #0074cc;
-  color: white;
+  background-color: #87CEEB; /* sky blue */
+  color: #003366; /* dark blue text for contrast */
   text-align: center;
   padding: 60px 20px;
   display: flex;
@@ -38,11 +38,13 @@ header img {
 header h1 {
   font-size: 36px;
   margin: 10px 0;
+  color: #003366; /* dark blue for readability */
 }
 
 header p {
   font-size: 18px;
   max-width: 800px;
+  color: #003366; /* dark blue for contrast */
 }
 
 /* SERVICES SECTION */
@@ -77,11 +79,27 @@ section#services h2 {
 
 /* FOOTER */
 footer {
-  background-color: #003d66;
-  color: white;
+  background-color: #87CEEB; /* sky blue */
+  color: #003366; /* dark blue text */
   text-align: center;
   padding: 20px;
   font-size: 14px;
+}
+
+footer a {
+  color: #003366;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #FFD700; /* golden hover */
+}
+
+footer img {
+  width: 30px;
+  margin: 10px 8px 0 8px;
+  vertical-align: middle;
+  filter: brightness(1.2) contrast(1.2);
 }
 
 /* CONTACT FORM (If Any) */
