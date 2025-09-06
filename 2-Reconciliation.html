@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -78,18 +78,17 @@
       padding: 15px;
       margin-top: 40px;
     }
-    /* ✅ Fix links inside main to avoid white background */
+    /* ✅ Only change internal links color to red, no underline, remove white background */
     main a {
-      color: #003366; /* match your text color */
-      text-decoration: underline; /* optional, to distinguish links */
-      background: none; /* remove any inherited background */
+      color: #e94560;           /* red */
+      text-decoration: none;     /* remove underline */
+      background-color: transparent !important; /* remove white background */
+      padding: 0 !important;
+      margin: 0 !important;
     }
     main a:hover {
-      color: #e94560;
+      color: #ff7b91;           /* slightly lighter red on hover */
     }
-
-
-     
   </style>
 </head>
 <body>
@@ -160,4 +159,4 @@
     <p>© 2025 MW Bookkeepers</p>
   </footer>
 </body>
-</html> 
+</html>
