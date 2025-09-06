@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Reviews | MW Bookkeepers</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    nav {
+      background-color: #003366;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #FFD700;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background-color: #FFD700;
+      color: #003366;
+    }
+    header {
+      background: #1a1a2e;
+      color: #FFD700;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #1a1a2e;
+      margin-top: 20px;
+    }
+    form label {
+      display: block;
+      margin: 12px 0 5px;
+      font-weight: bold;
+    }
+    form input[type="text"], form textarea, form select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+    form button {
+      background-color: #FFD700;
+      color: #003366;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background-color: #e6c200;
+    }
+    .star-rating {
+      display: flex;
+      gap: 5px;
+      font-size: 24px;
+    }
+    .star-rating input[type="radio"] {
+      display: none;
+    }
+    .star-rating label {
+      cursor: pointer;
+      color: #ccc;
+      transition: color 0.2s;
+    }
+    .star-rating input[type="radio"]:checked ~ label,
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+      color: #FFD700;
+    }
+    .approved-review {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      background: #fdfdfd;
+    }
+    .approved-review h4 {
+      margin: 0 0 5px;
+      color: #003366;
+    }
+    .approved-review p {
+      margin: 5px 0 0;
+    }
+    footer {
+      background: #1a1a2e;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="1-Introduction-to-Bookkeeping.html">Bookkeeping</a>
+    <a href="2-Reconciliation.html">Reconciliation</a>
+    <a href="3-Tax-Support.html">Tax Support</a>
+    <a href="reviews.html">Reviews</a>
+  </nav>
+
+  <header>
+    <h1>Client Reviews & Feedback</h1>
+    <p>Read what our clients say and submit your own review for MW Bookkeepers services.</p>
+  </header>
+
+  <main>
+    <h2>Submit Your Review</h2>
+    <form action="https://formspree.io/f/xgvlrvbz" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="service">Service Used:</label>
+      <select id="service" name="service" required>
+        <option value="">-- Select Service --</option>
+        <option value="Bookkeeping">Bookkeeping</option>
+        <option value="Reconciliation">Reconciliation</option>
+        <option value="Tax Support">Tax Support</option>
+      </select>
+
+      <label>Rating:</label>
+      <div class="star-rating">
+        <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+        <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+        <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+        <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+        <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+      </div>
+
+      <label for="feedback">Your Feedback:</label>
+      <textarea id="feedback" name="feedback" rows="5" required></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <h2>Approved Reviews</h2>
+    <!-- Add approved reviews here manually after verifying -->
+    <div class="approved-review">
+      <h4>John D. (Bookkeeping) ⭐⭐⭐⭐⭐</h4>
+      <p>MW Bookkeepers helped organize our accounts efficiently and accurately. Highly recommended!</p>
+    </div>
+
+    <div class="approved-review">
+      <h4>Sarah L. (Tax Support) ⭐⭐⭐⭐</h4>
+      <p>The team assisted our CPA firm with data transfer for 1040 forms and schedules. Very professional service.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 MW Bookkeepers</p>
+  </footer>
+
+</body>
+</html>
