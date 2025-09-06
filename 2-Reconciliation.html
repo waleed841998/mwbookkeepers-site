@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -57,6 +57,10 @@
       color: #1a1a2e;
       margin-top: 20px;
     }
+    h3 {
+      color: #1a1a2e;
+      margin-top: 15px;
+    }
     p {
       margin: 15px 0;
     }
@@ -74,12 +78,14 @@
       padding: 15px;
       margin-top: 40px;
     }
-    a {
-      color: #e94560;
-      text-decoration: none;
+    /* ✅ Fix links inside main to avoid white background */
+    main a {
+      color: #003366; /* match your text color */
+      text-decoration: underline; /* optional, to distinguish links */
+      background: none; /* remove any inherited background */
     }
-    a:hover {
-      text-decoration: underline;
+    main a:hover {
+      color: #e94560;
     }
   </style>
 </head>
@@ -151,4 +157,4 @@
     <p>© 2025 MW Bookkeepers</p>
   </footer>
 </body>
-</html>
+</html> 
