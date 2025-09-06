@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +40,7 @@
       padding: 30px 20px;
     }
     header h1, header p {
-      color: #FFD700; /* Header text yellow like other pages */
+      color: #FFD700; /* Yellow header text consistent with other pages */
     }
     header h1 {
       margin: 0;
@@ -62,7 +63,7 @@
       margin: 12px 0 5px;
       font-weight: bold;
     }
-    form input[type="text"], form textarea, form select {
+    form input[type="text"], form input[type="email"], form textarea, form select {
       width: 100%;
       padding: 10px;
       border-radius: 6px;
@@ -137,9 +138,12 @@
 
   <main>
     <h2>Submit Your Review</h2>
-    <form action="https://formspree.io/f/xgvlrvbz" method="POST">
+    <form id="reviewForm" action="https://formspree.io/f/xgvlrvbz" method="POST">
       <label for="name">Your Name:</label>
       <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="_replyto" required>
 
       <label for="service">Service Used:</label>
       <select id="service" name="service" required>
@@ -196,18 +200,26 @@
     const stars = document.querySelectorAll(".star-rating .star");
     const ratingInput = document.getElementById("rating");
 
-    stars.forEach((star, index) => {
+    stars.forEach(star => {
       star.addEventListener("click", () => {
-        const value = index + 1;
+        const value = star.getAttribute("data-value");
         ratingInput.value = value;
-        stars.forEach((s, i) => {
-          if (i < value) {
+        stars.forEach(s => {
+          if (s.getAttribute("data-value") <= value) {
             s.classList.add("filled");
           } else {
             s.classList.remove("filled");
           }
         });
       });
+    });
+
+    // Optional: prevent form submission without rating
+    document.getElementById("reviewForm").addEventListener("submit", function(e){
+      if(!ratingInput.value){
+        alert("Please select a rating (at least 1 star).");
+        e.preventDefault();
+      }
     });
   </script>
 
