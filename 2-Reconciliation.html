@@ -87,6 +87,16 @@
     main a:hover {
       color: #e94560;
     }
+/* Ensure all links inside main have no white background */
+main a {
+  color: #003366 !important;  /* your chosen text color */
+  text-decoration: underline;  /* optional */
+  background-color: transparent !important; /* remove any white background */
+  padding: 0 !important;        /* remove inherited padding */
+  margin: 0 !important;         /* remove inherited margin */
+}
+
+     
   </style>
 </head>
 <body>
