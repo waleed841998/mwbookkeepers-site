@@ -77,6 +77,19 @@ section#services h2 {
   color: #555;
 }
 
+/* ✅ Consistent red links, no underline, no white background */
+a {
+  color: #e94560; /* red for all links */
+  text-decoration: none; /* remove underline */
+  background-color: transparent !important; /* remove any white background */
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+a:hover {
+  color: #ff7b91; /* slightly lighter red on hover */
+}
+
 /* FOOTER */
 footer {
   background-color: #87CEEB; /* sky blue */
