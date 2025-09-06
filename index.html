@@ -67,7 +67,7 @@
 </head>
 <body>
 
-  <!-- ✅ Navigation -->
+  <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
     <a href="1-Introduction-to-Bookkeeping.html">Bookkeeping</a>
@@ -80,22 +80,21 @@
       We provide Remote Bookkeeping services for individuals and all kind of businesses including Property Management, Ecommerce, Retail & other Small Businesses.
     </p>
 
-    <!-- ====== Flyer Pop-Up Modal ====== -->
-    <div id="flyerModal" class="modal">
+    <!-- Promo Modal -->
+    <div id="promoModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <div style="text-align:center; margin-bottom:15px;">
-          <img src="/mwlogo.png.png" alt="MW Bookkeepers Logo" style="max-width:150px;">
-        </div>
-        <!-- Embedded Flyer -->
-        <iframe src="/MW-Bookkeeper-Flyer.pdf#toolbar=0&navpanes=0&scrollbar=0"
-          width="100%" height="70vh" style="border:none;"></iframe>
-        <!-- Download button -->
+        <h2 style="color:#003366; text-align:center;">Our Services</h2>
+        <ul style="list-style:none; padding:0; text-align:center; font-size:18px; line-height:2;">
+          <li>📊 Bookkeeping</li>
+          <li>🔄 Reconciliation</li>
+          <li>🧾 Tax Support</li>
+        </ul>
+        <p style="text-align:center; font-size:18px; font-weight:bold; color:#003366;">Affordable Bookkeeping Services</p>
+        <p style="text-align:center; font-size:22px; font-weight:bold; color:#2E8B57;">Starting at $600/month</p>
         <div style="text-align:center; margin-top:15px;">
-          <a href="/MW-Bookkeeper-Flyer.pdf" 
-             download="MW-Bookkeeper-Flyer.pdf"
-             style="background-color:#0f1a47; color:white; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold;">
-             Download Flyer
+          <a id="quoteBtn" href="#contact" style="background-color:#FFD700; color:#003366; padding:12px 25px; border-radius:8px; text-decoration:none; font-weight:bold;">
+            Get a Free Quote
           </a>
         </div>
       </div>
@@ -103,21 +102,30 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-        var modal = document.getElementById("flyerModal");
-        var span = document.getElementsByClassName("close")[0];
+        var modal = document.getElementById("promoModal");
+        var closeBtn = document.getElementsByClassName("close")[0];
+        var quoteBtn = document.getElementById("quoteBtn");
 
-        // Auto-open modal after 3 seconds
-        setTimeout(function(){ 
-          modal.style.display = "block"; 
+        // Show modal after 3 seconds
+        setTimeout(function() {
+          modal.style.display = "block";
         }, 3000);
 
-        // Close modal
-        span.onclick = function(){ 
-          modal.style.display = "none"; 
+        // Close modal on 'x'
+        closeBtn.onclick = function() {
+          modal.style.display = "none";
         }
-        window.onclick = function(e){ 
-          if (e.target == modal){ 
-            modal.style.display = "none"; 
+
+        // Close modal and scroll to contact
+        quoteBtn.onclick = function() {
+          modal.style.display = "none";
+          document.getElementById("contact").scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Close modal if clicked outside content
+        window.onclick = function(e) {
+          if(e.target == modal) {
+            modal.style.display = "none";
           }
         }
       });
@@ -152,7 +160,7 @@
     </a>
   </header>
 
-  <!-- Services -->
+  <!-- Services Sections (unchanged) -->
   <section id="bookkeeping">
     <h2>📊 Monthly Bookkeeping Services</h2>
     <p>Our monthly bookkeeping services ensure your financial records remain accurate, up to date, and fully compliant with accounting standards...</p>
@@ -203,28 +211,18 @@
     </form>
   </section>
 
-<!-- Footer -->
+  <!-- Footer -->
   <footer>
     <p>Contact: <a href="mailto:info@mwbookkeepers.com">info@mwbookkeepers.com</a></p>
-    <!-- Social Media Links -->
     <div class="social-links">
       <a href="https://www.facebook.com/share/19G3fLFqjf/" target="_blank">
-        <!-- Facebook Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#003366" viewBox="0 0 24 24">
-          <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.326v21.348c0 .733.593 1.326 1.325 1.326h11.494v-9.294h-3.128v-3.622h3.128v-2.672c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.918c-1.505 0-1.797.716-1.797 1.765v2.312h3.592l-.467 3.622h-3.125v9.294h6.128c.73 0 1.323-.593 1.323-1.326v-21.348c0-.733-.593-1.326-1.325-1.326z"/>
-        </svg>
+        <i class="fab fa-facebook" style="font-size:35px; color:#003366;"></i>
       </a>
       <a href="https://www.instagram.com/mwbookkeepers?igsh=MWxyNTlzYmJiMnRoaQ==" target="_blank">
-        <!-- Instagram Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#003366" viewBox="0 0 24 24">
-          <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.334 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.062 1.366-.335 2.633-1.31 3.608-.975.975-2.242 1.248-3.608 1.31-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.366-.062-2.633-.335-3.608-1.31-.975-.975-1.248-2.242-1.31-3.608-.058-1.265-.07-1.645-.07-4.849s.012-3.584.07-4.849c.062-1.366.335-2.633 1.31-3.608.975-.975 2.242-1.248 3.608-1.31 1.265-.058 1.645-.07 4.849-.07zm0-2.163c-3.259 0-3.67.012-4.947.071-1.607.073-3.036.356-4.212 1.532s-1.459 2.605-1.532 4.212c-.059 1.277-.071 1.688-.071 4.947s.012 3.67.071 4.947c.073 1.607.356 3.036 1.532 4.212s2.605 1.459 4.212 1.532c1.277.059 1.688.071 4.947.071s3.67-.012 4.947-.071c1.607-.073 3.036-.356 4.212-1.532s1.459-2.605 1.532-4.212c.059-1.277.071-1.688.071-4.947s-.012-3.67-.071-4.947c-.073-1.607-.356-3.036-1.532-4.212s-2.605-1.459-4.212-1.532c-1.277-.059-1.688-.071-4.947-.071z"/>
-          <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998z"/>
-          <circle cx="18.406" cy="5.594" r="1.44"/>
-        </svg>
+        <i class="fab fa-instagram" style="font-size:35px; color:#003366;"></i>
       </a>
     </div>
   </footer>
-  
-  
+
 </body>
 </html>
