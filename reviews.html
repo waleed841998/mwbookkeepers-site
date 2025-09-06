@@ -38,6 +38,9 @@
       text-align: center;
       padding: 30px 20px;
     }
+    header h1, header p {
+      color: #FFD700; /* Header text yellow like other pages */
+    }
     header h1 {
       margin: 0;
       font-size: 28px;
@@ -85,17 +88,12 @@
       gap: 5px;
       font-size: 24px;
     }
-    .star-rating input[type="radio"] {
-      display: none;
-    }
-    .star-rating label {
+    .star-rating .star {
       cursor: pointer;
       color: #ccc;
       transition: color 0.2s;
     }
-    .star-rating input[type="radio"]:checked ~ label,
-    .star-rating label:hover,
-    .star-rating label:hover ~ label {
+    .star-rating .star.filled {
       color: #FFD700;
     }
     .approved-review {
@@ -153,12 +151,13 @@
 
       <label>Rating:</label>
       <div class="star-rating">
-        <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
-        <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
-        <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
-        <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
-        <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
       </div>
+      <input type="hidden" name="rating" id="rating" required>
 
       <label for="feedback">Your Feedback:</label>
       <textarea id="feedback" name="feedback" rows="5" required></textarea>
@@ -166,22 +165,51 @@
       <button type="submit">Submit Review</button>
     </form>
 
-    <h2>Approved Reviews</h2>
-    <!-- Add approved reviews here manually after verifying -->
+    <h2>Top Reviews</h2>
     <div class="approved-review">
-      <h4>John D. (Bookkeeping) ⭐⭐⭐⭐⭐</h4>
-      <p>MW Bookkeepers helped organize our accounts efficiently and accurately. Highly recommended!</p>
+      <h4>Betsy Carter (Bookkeeping) ⭐⭐⭐⭐⭐</h4>
+      <p>Super fast, exactly what I needed. I would definitely hire them for more work soon. Thanks</p>
     </div>
 
     <div class="approved-review">
-      <h4>Sarah L. (Tax Support) ⭐⭐⭐⭐</h4>
-      <p>The team assisted our CPA firm with data transfer for 1040 forms and schedules. Very professional service.</p>
+      <h4>Charlie Juliette (Bookkeeping) ⭐⭐⭐⭐⭐</h4>
+      <p>Super Fast</p>
+    </div>
+
+    <div class="approved-review">
+      <h4>Ms. Biancca (Bookkeeping) ⭐⭐⭐⭐⭐</h4>
+      <p>Soo patient & knowledgeable about the services I need. I will definitely utilize the services again as I learned so much from them</p>
+    </div>
+
+    <div class="approved-review">
+      <h4>Cyworld (Bookkeeping) ⭐⭐⭐⭐⭐</h4>
+      <p>Highly recommended, follows instructions perfectly. You won't be disappointed.</p>
     </div>
   </main>
 
   <footer>
     <p>© 2025 MW Bookkeepers</p>
   </footer>
+
+  <script>
+    // Star rating JS
+    const stars = document.querySelectorAll(".star-rating .star");
+    const ratingInput = document.getElementById("rating");
+
+    stars.forEach((star, index) => {
+      star.addEventListener("click", () => {
+        const value = index + 1;
+        ratingInput.value = value;
+        stars.forEach((s, i) => {
+          if (i < value) {
+            s.classList.add("filled");
+          } else {
+            s.classList.remove("filled");
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
